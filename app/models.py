@@ -26,7 +26,7 @@ class Places(models.Model):
         return super(Places, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('place', kwargs={'place_id': self.slug})
+        return reverse('places', kwargs={'place_id': self.pk})
 
 
 class Images(models.Model):
