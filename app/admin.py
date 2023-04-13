@@ -4,11 +4,19 @@ from django.utils.safestring import mark_safe
 from .models import Places, Images
 
 
+class ImagesInline(admin.TabularInline):
+    model = Images
+
+
 class PlacesAdmin(admin.ModelAdmin):
     list_display = ('title',)
     list_display_links = ('title',)
     search_fields = ('title',)
     prepopulated_fields = {"slug": ("title",)}
+    inlines = [
+        ImagesInline,
+    ]
+
 
 class ImagesAdmin(admin.ModelAdmin):
     # list_display = ('position', 'place',)
@@ -18,7 +26,6 @@ class ImagesAdmin(admin.ModelAdmin):
     # search_fields = ('name',)
     # prepopulated_fields = {"name": ("name",)}
     # exclude = ('name',)
-
 
 
 admin.site.register(Places, PlacesAdmin)
