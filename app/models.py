@@ -34,7 +34,7 @@ class Images(models.Model):
 
     place = models.ForeignKey(Places, verbose_name='Место', on_delete=models.CASCADE)
     image = models.ImageField(upload_to=choose_folder, verbose_name="Фото")
-    position = models.PositiveIntegerField(verbose_name='Позиция')
+    position = models.PositiveIntegerField(verbose_name='Позиция', default=0, blank=False, null=False)
 
     # slug = models.SlugField(max_length=100, unique=True, db_index=True, verbose_name="URL")
 
@@ -44,12 +44,4 @@ class Images(models.Model):
     class Meta:
         verbose_name = 'Изображение'
         verbose_name_plural = 'Изображения'
-        ordering = ('place', 'position',)
-        # ordering = ('position',)
-
-    # def save(self, *args, **kwargs):
-    #     self.name = str(len(Images.objects.filter(place_id=self.place)) + 1) + " " + self.place.__str__()
-    #     return super(Images, self).save(*args, **kwargs)
-
-# def get_absolute_url(self):
-#     return reverse('image', kwargs={'image_id': self.slug})
+        ordering = ('position',)
