@@ -36,8 +36,6 @@ class Images(models.Model):
     image = models.ImageField(upload_to=choose_folder, verbose_name="Фото")
     position = models.PositiveIntegerField(verbose_name='Позиция', default=0, blank=False, null=False)
 
-    # slug = models.SlugField(max_length=100, unique=True, db_index=True, verbose_name="URL")
-
     def __str__(self):
         return f'{self.position} {self.place.title}'
 

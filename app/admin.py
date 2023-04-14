@@ -41,8 +41,5 @@ class ImagesAdmin(admin.ModelAdmin):
     get_html_photo.short_description = "Фото"
 
 
-# admin.site.register(Places, PlacesAdmin)
-# admin.site.register(Images, ImagesAdmin)
-
 admin.site.site_title = 'Админ-панель'
 admin.site.site_header = 'Админ-панель'
