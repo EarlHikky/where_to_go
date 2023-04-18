@@ -50,7 +50,7 @@ python manage.py runserver
 
 Часть настроек проекта берётся из переменных окружения. Чтобы их определить, создайте файл `.env` рядом с `manage.py` и запишите туда данные в таком формате: `ПЕРЕМЕННАЯ=значение`.
 
-- `DEBUG=`... - дебаг-режим. По умолчанию `True`.
+- `DEBUG=`... - дебаг-режим. По умолчанию `False`.
 - `SECRET_KEY=`... - ключ проекта.
 - `ALLOWED_HOSTS=`... - см [документацию Django](https://docs.djangoproject.com/en/3.1/ref/settings/#allowed-hosts), (по умолчанию: '127.0.0.1', 'localhost', '.pythonanywhere.com').
 
