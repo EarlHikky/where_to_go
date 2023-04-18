@@ -28,8 +28,9 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DEBUG', False)
 
-ALLOWED_HOSTS = env.list("ALLOWED_HOSTS") if env.list("ALLOWED_HOSTS") else ['127.0.0.1', 'localhost',
-                                                                             '.pythonanywhere.com']
+DEFAULT_HOSTS = ['127.0.0.1', 'localhost', '.pythonanywhere.com']
+
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", DEFAULT_HOSTS)
 
 # Application definition
 
