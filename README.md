@@ -51,11 +51,6 @@ python manage.py load_place "https://raw.githubusercontent.com/devmanorg/where-t
 python manage.py runserver
 ```  
 
-8. [Переход в админку](https://earlhikky91.pythonanywhere.com/admin/):
-
-- login: admin
-
-- password: adminadmin
 
 ## Переменные окружения
 
